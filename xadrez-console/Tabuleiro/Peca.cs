@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
     abstract class Peca
     {
@@ -45,7 +41,7 @@ namespace tabuleiro
             return false;
         }
 
-        public bool podeMoverPara(Posicao pos)
+        public bool movimentoPossiel(Posicao pos)
         {
             return movimentosPossiveis()[pos.Linha, pos.Coluna];
         }
