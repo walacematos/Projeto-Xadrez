@@ -2,35 +2,35 @@
 {
     abstract class Peca
     {
-        public Posicao Posicao { get; set; }
-        public Cor Cor { get; protected set; }
-        public int QteMovimentos { get; protected set; }
-        public Tabuleiro Tab { get; protected set; }
+        public Posicao posicao { get; set; }
+        public Cor cor { get; protected set; }
+        public int quantidadeDeMovimentos { get; protected set; }
+        public Tabuleiro tabuleiro { get; protected set; }
 
         public Peca(Tabuleiro tab, Cor cor )
         {
-            Posicao = null;
-            Cor = cor;
-            Tab = tab;
-            QteMovimentos = 0;
+            posicao = null;
+            this.cor = cor;
+            tabuleiro = tab;
+            quantidadeDeMovimentos = 0;
         }
 
         public void incrementarQteMovimentos()
         {
-            QteMovimentos++;
+            quantidadeDeMovimentos++;
         }
 
         public void decrementarQteMovimentos()
         {
-            QteMovimentos--;
+            quantidadeDeMovimentos--;
         }
 
         public bool existeMovimentosPossiveis()
         {
             bool[,] mat = movimentosPossiveis();
-            for (int i=0; i<Tab.Linhas; i++)
+            for (int i=0; i<tabuleiro.Linhas; i++)
             {
-                for (int j=0; j<Tab.Colunas; j++)
+                for (int j=0; j<tabuleiro.Colunas; j++)
                 {
                     if (mat[i,j])
                     {
