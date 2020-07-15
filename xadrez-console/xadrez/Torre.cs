@@ -24,34 +24,34 @@ namespace xadrez
             Posicao pos = new Posicao(0, 0);
 
             //acima
-            pos.definirValores(posicao.Linha - 1, posicao.Coluna);
+            pos.definirValores(posicao.linha - 1, posicao.Coluna);
             while (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
-                mat[pos.Linha, pos.Coluna] = true;
+                mat[pos.linha, pos.Coluna] = true;
                 if (tabuleiro.peca(pos) != null && tabuleiro.peca(pos).cor != cor)
                 {
                     break;
                 }
-                pos.Linha = pos.Linha - 1;
+                pos.linha = pos.linha - 1;
             }
 
             //abaixo
-            pos.definirValores(posicao.Linha + 1, posicao.Coluna);
+            pos.definirValores(posicao.linha + 1, posicao.Coluna);
             while (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
-                mat[pos.Linha, pos.Coluna] = true;
+                mat[pos.linha, pos.Coluna] = true;
                 if (tabuleiro.peca(pos) != null && tabuleiro.peca(pos).cor != cor)
                 {
                     break;
                 }
-                pos.Linha = pos.Linha + 1;
+                pos.linha = pos.linha + 1;
             }
 
             //direita
-            pos.definirValores(posicao.Linha, posicao.Coluna +1);
+            pos.definirValores(posicao.linha, posicao.Coluna +1);
             while (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
-                mat[pos.Linha, pos.Coluna] = true;
+                mat[pos.linha, pos.Coluna] = true;
                 if (tabuleiro.peca(pos) != null && tabuleiro.peca(pos).cor != cor)
                 {
                     break;
@@ -60,10 +60,10 @@ namespace xadrez
             }
 
             //esquerda
-            pos.definirValores(posicao.Linha, posicao.Coluna - 1);
+            pos.definirValores(posicao.linha, posicao.Coluna - 1);
             while (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
-                mat[pos.Linha, pos.Coluna] = true;
+                mat[pos.linha, pos.Coluna] = true;
                 if (tabuleiro.peca(pos) != null && tabuleiro.peca(pos).cor != cor)
                 {
                     break;

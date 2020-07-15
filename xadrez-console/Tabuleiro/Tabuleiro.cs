@@ -24,7 +24,7 @@ namespace tabuleiro
 
         public Peca peca(Posicao pos)
         {
-            return Pecas[pos.Linha, pos.Coluna];
+            return Pecas[pos.linha, pos.Coluna];
         }
 
         public bool existePeca(Posicao pos)
@@ -39,7 +39,7 @@ namespace tabuleiro
             {
                 throw new TabuleiroException("Ja existe uma peca nessa posicao!");
             }
-            Pecas[pos.Linha, pos.Coluna] = p;
+            Pecas[pos.linha, pos.Coluna] = p;
             p.posicao = pos;
         }
 
@@ -51,13 +51,13 @@ namespace tabuleiro
             }
             Peca aux = peca(pos);
             aux.posicao = null;
-            Pecas[pos.Linha, pos.Coluna] = null;
+            Pecas[pos.linha, pos.Coluna] = null;
             return aux;
         }
 
         public bool posicaoValida(Posicao pos)
         {
-            if (pos.Linha < 0 || pos.Linha >= Linhas || pos.Coluna < 0 || pos.Coluna >= Colunas)
+            if (pos.linha < 0 || pos.linha >= Linhas || pos.Coluna < 0 || pos.Coluna >= Colunas)
             {
                 return false;
             }

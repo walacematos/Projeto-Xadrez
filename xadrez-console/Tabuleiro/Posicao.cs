@@ -2,24 +2,24 @@
 {
     class Posicao
     {
-        public int Linha { get; set; }
+        public int linha { get; set; }
         public int Coluna { get; set; }
 
         public Posicao(int linha, int coluna)
         {
-            Linha = linha;
+            this.linha = linha;
             Coluna = coluna;
         }
 
         public void definirValores(int linha, int coluna)
         {
-            Linha = linha;
+            this.linha = linha;
             Coluna = coluna;
         }
 
         public override string ToString()
         {
-            return Linha
+            return linha
                 + ", "
                 + Coluna;
         }
